@@ -1,0 +1,13 @@
+# REABILITA_OMBRO_CONTEXT_INDEX
+
+## LOCAL_RESOURCES
+- Master Specs: ./squad/SPECS.md
+- Architecture: ./squad/ARCHITECTURE.md
+- Plan: ./squad/PLAN.md
+- Squad Assets (Research/UI): ./squad/assets/
+- Operational Laws: ./squad/SQUAD_PROTOCOLS.md
+
+## STACK_DOCUMENTATION
+- Flutter: https://docs.flutter.dev/
+- Dart: https://dart.dev/guides
+- Mermaid: https://mermaid.js.org
