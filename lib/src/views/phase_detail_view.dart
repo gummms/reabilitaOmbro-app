@@ -2,21 +2,45 @@ import 'package:flutter/material.dart';
 import 'package:componentes_padrao/components/list_tiles/list_containers.dart';
 import 'package:componentes_padrao/components/style_constants/tipography.dart';
 import 'package:componentes_padrao/components/style_constants/colors.dart';
-import 'package:reabilita_ombro/src/models/exercise_model.dart';
 
+import '../models/level_model.dart';
+
+/// Arguments bundled for ExerciseView navigation.
+class ExerciseViewArgs {
+  final ExerciseItem exercise;
+  final int currentIndex;          // 0-based index of the current exercise
+  final int totalExercises;        // total count in the level
+  final int levelOrder;            // level.order (used for survey + completion)
+  final String levelTitle;         // for display in ExerciseView appBar
+  final List<ExerciseItem> allExercises; // full list to enable next navigation
+
+  const ExerciseViewArgs({
+    required this.exercise,
+    required this.currentIndex,
+    required this.totalExercises,
+    required this.levelOrder,
+    required this.levelTitle,
+    required this.allExercises,
+  });
+}
+
+/// Exercise list screen for a given level.
+///
+/// Receives a [LevelModel] as a named-route argument.
+/// Renders each [ExerciseItem] as a tappable tile navigating to [ExerciseView].
 class PhaseDetailView extends StatelessWidget {
-  final int phase;
+  final LevelModel level;
 
-  const PhaseDetailView({super.key, required this.phase});
+  const PhaseDetailView({super.key, required this.level});
 
   @override
   Widget build(BuildContext context) {
-    // Mock exercise logic for testing
-    final exerciseList = ExerciseModel.mockExercises.where((e) => e.phase == phase).toList();
+    final exercises = level.exercises;
+
     return Scaffold(
       backgroundColor: MY_WHITE,
       appBar: AppBar(
-        title: Text("Fase $phase", style: APP_BAR()),
+        title: Text(level.title, style: APP_BAR()),
         automaticallyImplyLeading: false,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
@@ -27,40 +51,57 @@ class PhaseDetailView extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(24.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                "Escolha o exercicio",
+                'Escolha o exercício',
                 style: H2(textColor: MY_BLACK),
+              ),
+              const SizedBox(height: 8.0),
+              Text(
+                '${exercises.length} exercício${exercises.length != 1 ? 's' : ''} neste nível',
+                style: BODY(textColor: MY_DARK_GREY),
               ),
               const SizedBox(height: 24.0),
               Expanded(
-                child: exerciseList.isEmpty
+                child: exercises.isEmpty
                     ? Center(
                         child: Text(
-                          'Nenhum exercício disponível.',
+                          'Nenhum exercício disponível neste nível.',
                           style: BODY(textColor: MY_DARK_GREY),
+                          textAlign: TextAlign.center,
                         ),
                       )
                     : ListView.separated(
-                  itemCount: exerciseList.length,
-                  separatorBuilder: (context, index) => const SizedBox(height: 16.0),
-                  itemBuilder: (context, index) {
-                    return SimpleListContainerTile(
-                      title: exerciseList[index].title,
-                      topInfo: ["Fase $phase", exerciseList[index].duration],
-                      imagePath: "assets/dummy.png",
-                      onTap: () {
-                        Navigator.pushNamed(
-                          context,
-                          '/exercise',
-                          arguments: exerciseList[index],
-                        );
-                      },
-                    );
-                  },
-                ),
+                        itemCount: exercises.length,
+                        separatorBuilder: (ctx, i) =>
+                            const SizedBox(height: 16.0),
+                        itemBuilder: (context, index) {
+                          final exercise = exercises[index];
+                          return SimpleListContainerTile(
+                            title: exercise.title,
+                            topInfo: [
+                              level.title,
+                              '${index + 1} de ${exercises.length}',
+                            ],
+                            imagePath: 'assets/dummy.png',
+                            onTap: () {
+                              Navigator.pushNamed(
+                                context,
+                                '/exercise',
+                                arguments: ExerciseViewArgs(
+                                  exercise: exercise,
+                                  currentIndex: index,
+                                  totalExercises: exercises.length,
+                                  levelOrder: level.order,
+                                  levelTitle: level.title,
+                                  allExercises: exercises,
+                                ),
+                              );
+                            },
+                          );
+                        },
+                      ),
               ),
             ],
           ),

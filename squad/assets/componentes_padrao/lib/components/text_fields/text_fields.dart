@@ -59,7 +59,7 @@ Widget SimpleTextField({
               )
             : lightTextFieldDecor.copyWith(
                 hintText: hintText,
-                hintStyle: BODY().copyWith(fontWeight: FontWeight.w600),
+                hintStyle: BODY(textColor: const Color(0xFF777777)).copyWith(fontWeight: FontWeight.w600),
               ),
         onChanged: onChanged,
         validator: (value) {
@@ -177,7 +177,7 @@ class _ObscureTextFieldState extends State<ObscureTextField> {
                 )
               : lightTextFieldDecor.copyWith(
                   hintText: hintText,
-                  hintStyle: BODY().copyWith(fontWeight: FontWeight.w600),
+                  hintStyle: BODY(textColor: const Color(0xFF777777)).copyWith(fontWeight: FontWeight.w600),
                   suffixIcon: widget.isPassword
                       ? Padding(
                           padding: const EdgeInsets.only(right: 15.0),
@@ -321,7 +321,7 @@ class _DatePickerTextFieldState extends State<DatePickerTextField> {
                 )
               : lightTextFieldDecor.copyWith(
                   hintText: hintText,
-                  hintStyle: BODY(textColor: MY_BLACK)
+                  hintStyle: BODY(textColor: const Color(0xFF777777))
                       .copyWith(fontWeight: FontWeight.w600),
                 ),
           onChanged: onChanged,
@@ -428,7 +428,7 @@ class _TimePickerTextFieldState extends State<TimePickerTextField> {
                 )
               : lightTextFieldDecor.copyWith(
                   hintText: hintText,
-                  hintStyle: BODY(textColor: MY_BLACK)
+                  hintStyle: BODY(textColor: const Color(0xFF777777))
                       .copyWith(fontWeight: FontWeight.w600),
                 ),
           onChanged: onChanged,
