@@ -1,4 +1,4 @@
-import 'package:componentes_padrao/components/buttons/elevated_buttons.dart';
+/* import 'package:componentes_padrao/components/buttons/elevated_buttons.dart';
 import 'package:componentes_padrao/components/style_constants/colors.dart';
 import 'package:componentes_padrao/components/style_constants/tipography.dart';
 import 'package:componentes_padrao/pages/components.dart';
@@ -106,3 +106,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+ */

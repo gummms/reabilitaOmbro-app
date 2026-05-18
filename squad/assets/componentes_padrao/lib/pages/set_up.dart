@@ -1,4 +1,4 @@
-import 'package:componentes_padrao/components/buttons/elevated_buttons.dart';
+/* import 'package:componentes_padrao/components/buttons/elevated_buttons.dart';
 import 'package:componentes_padrao/components/style_constants/tipography.dart';
 import 'package:componentes_padrao/pages/components.dart';
 import 'package:componentes_padrao/pages/style_guidelines.dart';
@@ -263,3 +263,4 @@ class _SetUpPageState extends State<SetUpPage> {
     );
   }
 }
+ */

@@ -1,4 +1,4 @@
-# Componentes Padrão - LIT
+<!-- # Componentes Padrão - LIT
 
 Um repositório de códigos de todos os componentes padrão que devem ser usados para construir seus aplicativos LIT/Unichristus.
 
@@ -49,7 +49,7 @@ Pacote validação de padrões e formatos brasileiros. É utilizado na validaç�
 
 #### email_validator
 
-Outro pacote de validação, mas dessa vez para e-mails. [Link de acesso](https://pub.dev/packages/email_validator) 
+Outro pacote de validação, mas dessa vez para e-mails. [Link de acesso](https://pub.dev/packages/email_validator)
 <br/>
 
 ### Theme Set Up
@@ -134,7 +134,7 @@ A seguir você vai encontrar a documentação desses widgets, que está disponiv
 ![home button](/assets/components/consultas.png "home button")
 
 > A simple square button with an image background.
-> 
+>
 > This version is used to list the **different options** a user can take.
 
 #### SimpleButton
@@ -142,7 +142,7 @@ A seguir você vai encontrar a documentação desses widgets, que está disponiv
 ![simple button](/assets/components/Group23.png "simple button")
 
 > A simple button with only text.
-> 
+>
 > There is a dark and a light version to be **used accordingly**.
 
 #### ButtonContainer
@@ -150,7 +150,7 @@ A seguir você vai encontrar a documentação desses widgets, que está disponiv
 ![button conteiner](/assets/components/agendadas.png "button conteiner")
 
 > Another simple button with text and a background image.
-> 
+>
 > This version is used for **listing categories**.
 
 #### CustomTextButton
@@ -158,7 +158,7 @@ A seguir você vai encontrar a documentação desses widgets, que está disponiv
 ![text button](/assets/components/Group25.png "text button")
 
 > A simple text button to be used for a secondary action or an action that the user most likely will never touch.
-> 
+>
 > There is a dark and a light version to be **used accordingly**.
 
 #### LabeledRadio
@@ -166,7 +166,7 @@ A seguir você vai encontrar a documentação desses widgets, que está disponiv
 ![radio](/assets/components/Frame128.png "radio")
 
 > A simple text button to be used when you want to get a choice information from your user.
-> 
+>
 > There is a dark and a light version to be **used accordingly**.
 
 ### Text Fields
@@ -182,38 +182,38 @@ A seguir você vai encontrar a documentação desses widgets, que está disponiv
 > A simple text field to be used for a simple text input, with options to validate cpf, email or if the input is empty. There is also a option to only allow digits in case you need this.
 >
 > If you want to hide the label, pass this atribute as an empty string.
-> 
+>
 > There is a dark and a light version to be **used accordingly**.
 
 #### ObscureTextField
 
 > A text field to be used for a simple text input that requires an option to obscure the input, to be used for password or sensitive data that the user may like to hide. The default validation of this widget is validate a password with 6 digits, in case you set the atributte "isPassword" to _false_ the validation will allow any combinations minus an empty input.
 > _**This widget is a variation of the [SimpleTextField](#simpletextfield)**_
-> 
+>
 > If you want to hide the label, pass this atribute as an empty string.
-> 
+>
 > There is a dark and a light version to be **used accordingly**.
 
 #### DatePickerTextField
 
 > A text field to be used when you need to get a date information of your user.
-> 
+>
 > You need to pass a _**start date**_ and an _**end date**_ of the timeframe you want, then it will only allow your user to select a date in between these two, avoiding an input error. Validation takes place only for this interval and the mandatory completion of the field.
-> 
+>
 > The default start date and end date entries are 01/01/1920 and the present date, respectively. If you want to set the timeframe there is a few restrictions you must follow. The start date **MUST NOT** exceed the date 01/01/1920, otherwise the widget will automatically set the start date to that one. On the other hand, the **ONLY** restriction of the end date is to be after the start date, otherwise it will automatically set the date to the present day.
 >
 > If you want to hide the label, pass this atribute as an empty string.
-> 
+>
 > There is a dark and a light version to be **used accordingly**.
 
 #### TimePickerTextField
 
 > A text field to be used when you need to get a time information of your user.
-> 
+>
 > Unlike the widget [DatePickerTextField](#datepickertextfield), this widget doesn't require a start and end date, because the user will only select a time.
-> 
+>
 > If you want to hide the label, pass this atribute as an empty string.
-> 
+>
 > There is a dark and a light version to be **used accordingly**.
 
 ### List Tiles
@@ -227,11 +227,11 @@ Esses widgets são usados quando se deseja listar informações para seu usuári
 ![ListContainerTile](/assets/components/Card.png "ListContainerTile")
 
 > A container to display information with a background image to indicate the category of the information. To be used in list views.
-> 
-> The lists _topInfo_ and _bottomInfo_ needs to be of a **maximum length of 2**, aka it needs to have one or two items. 
-> 
+>
+> The lists _topInfo_ and _bottomInfo_ needs to be of a **maximum length of 2**, aka it needs to have one or two items.
+>
 > If you **DON'T** want to show any bottom info, use the widget SimpleListContainerTile.
-> 
+>
 > The _title_ is the main information you want to display. Be sure to use this widget the correct way. If the tile opens a page, pass the action on the _onTap_ atributte.
 
 #### SimpleListContainerTile
@@ -239,9 +239,9 @@ Esses widgets são usados quando se deseja listar informações para seu usuári
 ![SimpleListContainerTile](/assets/components/Card-Chat.png "SimpleListContainerTile")
 
 > A simpler version of the widger ListContainerTile to be used to display information with a background image to indicate the category of the information. To be used in list views
-> 
+>
 > The list _topInfo_ needs to be of a **maximum length of 2**, aka it needs to have one or two itemsgit
-> 
+>
 > The _title_ is the main information you want to display. Be sure to use this widget the correct way. If the tile opens a page, pass the action on the _onTap_ atributte.
 
 #### CustomExpasionTile
@@ -249,9 +249,9 @@ Esses widgets são usados quando se deseja listar informações para seu usuári
 ![CustomExpasionTile](/assets/components/tile.png "CustomExpasionTile")
 
 > A version of the flutter widget 'ExpansionTile', but following the LIT style guidelines.
-> 
+>
 > Use this widget when you want to compile some information of your user and show only when they want to see.
-> 
+>
 > **USE ONLY ON A LIGHT BACKGROUND.**
 
 ----
@@ -265,3 +265,4 @@ Esses widgets são usados quando se deseja listar informações para seu usuári
 [2 - Style Guidelines](#style-guidelines)
 
 [3 - Componentes](#componentes)
+ -->
